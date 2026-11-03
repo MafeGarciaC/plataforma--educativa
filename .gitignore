@@ -1,0 +1,5 @@
+node_modules/
+# Base de datos local generada al usar el prototipo
+data/db.json
+.DS_Store
+Thumbs.db

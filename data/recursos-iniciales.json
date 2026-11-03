@@ -1,0 +1,72 @@
+[
+  {
+    "id": "rec-fracciones",
+    "titulo": "Fracciones equivalentes",
+    "area": "Matemáticas",
+    "grado": "6°",
+    "tipo": "Guía",
+    "docente": "Docente de Matemáticas",
+    "descripcion": "Qué son las fracciones equivalentes y cómo encontrarlas por amplificación y simplificación.",
+    "contenido": "Dos fracciones son equivalentes cuando representan la misma parte de un todo. Por ejemplo, 1/2 y 2/4 son equivalentes: si partes una arepa en dos y te comes una parte, comes lo mismo que si la partes en cuatro y te comes dos.\n\nAmplificar una fracción es multiplicar el numerador y el denominador por el mismo número distinto de cero. Al amplificar 2/3 por 4 se obtiene 8/12, que es equivalente a 2/3.\n\nSimplificar una fracción es dividir el numerador y el denominador por un mismo divisor común. Al simplificar 12/18 entre 6 se obtiene 2/3. Cuando ya no se puede simplificar más, la fracción es irreducible.\n\nPara comprobar si dos fracciones a/b y c/d son equivalentes, multiplica en cruz: si a × d es igual a b × c, son equivalentes. Por ejemplo, 3/5 y 9/15 son equivalentes porque 3 × 15 = 45 y 5 × 9 = 45.\n\nPractica: escribe tres fracciones equivalentes a 3/4 y simplifica 20/30 hasta llegar a su forma irreducible."
+  },
+  {
+    "id": "rec-ecuaciones",
+    "titulo": "Ecuaciones de primer grado",
+    "area": "Matemáticas",
+    "grado": "8°",
+    "tipo": "Guía",
+    "docente": "Docente de Matemáticas",
+    "descripcion": "Pasos para resolver ecuaciones lineales con una incógnita, con ejemplos resueltos.",
+    "contenido": "Una ecuación de primer grado es una igualdad en la que la incógnita aparece con exponente 1, por ejemplo 3x + 5 = 20.\n\nResolverla consiste en encontrar el valor de x que hace verdadera la igualdad. La regla básica es que lo que se haga a un lado de la igualdad se debe hacer también al otro.\n\nEjemplo: en 3x + 5 = 20, se resta 5 a ambos lados y queda 3x = 15. Luego se dividen ambos lados entre 3 y queda x = 5. Para comprobar, se reemplaza: 3 × 5 + 5 = 20.\n\nSi la incógnita aparece en ambos lados, primero se agrupan los términos con x en un lado y los números en el otro. En 5x − 4 = 2x + 8, se resta 2x a ambos lados (3x − 4 = 8), se suma 4 (3x = 12) y se divide entre 3 (x = 4).\n\nPractica: resuelve 4x − 7 = 21 y 2(x + 3) = 18, y comprueba tus respuestas."
+  },
+  {
+    "id": "rec-argumentativo",
+    "titulo": "El texto argumentativo",
+    "area": "Lenguaje",
+    "grado": "9°",
+    "tipo": "Lectura",
+    "docente": "Docente de Lenguaje",
+    "descripcion": "Estructura del texto argumentativo: tesis, argumentos y conclusión.",
+    "contenido": "Un texto argumentativo busca convencer al lector de una idea, llamada tesis, por medio de razones bien sustentadas.\n\nSu estructura tiene tres partes. En la introducción se presenta el tema y la tesis. En el desarrollo se exponen los argumentos que respaldan la tesis. En la conclusión se retoma la tesis y se resume por qué es válida.\n\nExisten varios tipos de argumentos: de autoridad, cuando se cita a un experto; de ejemplificación, cuando se dan casos concretos; de datos, cuando se usan cifras o estadísticas; y de causa y efecto, cuando se explica qué consecuencias tiene algo.\n\nUn buen texto argumentativo también reconoce las ideas contrarias, llamadas contraargumentos, y explica por qué no son suficientes para rechazar la tesis.\n\nPractica: escribe un texto corto en el que defiendas si los colegios deberían tener acceso a internet en todas las aulas. Incluye al menos dos argumentos y un contraargumento."
+  },
+  {
+    "id": "rec-ciclo-agua",
+    "titulo": "El ciclo del agua",
+    "area": "Ciencias Naturales",
+    "grado": "6°",
+    "tipo": "Lectura",
+    "docente": "Docente de Ciencias Naturales",
+    "descripcion": "Las etapas del ciclo del agua y su importancia para los ecosistemas de Sucre.",
+    "contenido": "El agua del planeta está en movimiento permanente entre la superficie, la atmósfera y el subsuelo. Ese recorrido se llama ciclo del agua o ciclo hidrológico.\n\nEvaporación: el calor del sol convierte en vapor el agua de los mares, ríos, ciénagas y suelos. Las plantas también liberan vapor por sus hojas en un proceso llamado transpiración.\n\nCondensación: al subir, el vapor se enfría y forma pequeñas gotas que se agrupan en nubes.\n\nPrecipitación: cuando las gotas crecen y pesan lo suficiente, caen como lluvia. En la región Caribe la mayor parte de las lluvias se concentra en los meses de la temporada de lluvias.\n\nEscorrentía e infiltración: parte del agua corre por la superficie hacia arroyos y ríos, y otra parte se filtra en el suelo y alimenta las aguas subterráneas, de donde se abastecen muchos pozos.\n\nPractica: dibuja el ciclo del agua y explica por qué talar los árboles cerca de un arroyo puede afectar la cantidad de agua disponible."
+  },
+  {
+    "id": "rec-regiones",
+    "titulo": "Regiones naturales de Colombia",
+    "area": "Ciencias Sociales",
+    "grado": "7°",
+    "tipo": "Guía",
+    "docente": "Docente de Ciencias Sociales",
+    "descripcion": "Características de las seis regiones naturales del país.",
+    "contenido": "Colombia se divide en seis regiones naturales según su relieve, clima y vegetación: Caribe, Andina, Pacífica, Orinoquía, Amazonía e Insular.\n\nLa región Caribe, donde está el departamento de Sucre, se ubica al norte del país. Tiene clima cálido, llanuras, sabanas y ciénagas, y en ella la ganadería y la agricultura son actividades económicas importantes.\n\nLa región Andina está atravesada por las tres cordilleras y concentra la mayor parte de la población. La región Pacífica es una de las más lluviosas del mundo y tiene una gran biodiversidad.\n\nLa Orinoquía está formada por extensas llanuras, y la Amazonía por la selva tropical húmeda más grande del planeta. La región Insular agrupa las islas del país, como San Andrés, Providencia y Santa Catalina.\n\nPractica: haz un cuadro con las seis regiones y escribe para cada una su clima, un producto económico y un departamento que la conforme."
+  },
+  {
+    "id": "rec-present-simple",
+    "titulo": "Present simple: daily routines",
+    "area": "Inglés",
+    "grado": "7°",
+    "tipo": "Guía",
+    "docente": "Docente de Inglés",
+    "descripcion": "Uso del presente simple para describir rutinas, con afirmativas, negativas y preguntas.",
+    "contenido": "El presente simple se usa para hablar de hábitos y rutinas, por ejemplo: I wake up at six o'clock.\n\nEn oraciones afirmativas, con he, she e it se agrega -s o -es al verbo: She walks to school. He watches TV.\n\nEn oraciones negativas se usa do not (don't) o does not (doesn't) más el verbo en su forma base: I don't play football. She doesn't eat meat.\n\nPara hacer preguntas se usa do o does al inicio: Do you like music? Does he study English?\n\nPalabras útiles para rutinas: always (siempre), usually (usualmente), sometimes (a veces) y never (nunca). Van antes del verbo principal: I always have breakfast.\n\nPractica: escribe cinco oraciones sobre tu rutina de un día de colegio y una pregunta para un compañero."
+  },
+  {
+    "id": "rec-internet",
+    "titulo": "¿Cómo funciona internet?",
+    "area": "Tecnología",
+    "grado": "8°",
+    "tipo": "Lectura",
+    "docente": "Docente de Tecnología",
+    "descripcion": "Conceptos básicos de redes, navegadores y aplicaciones que funcionan sin conexión.",
+    "contenido": "Internet es una red mundial de computadores conectados entre sí que intercambian información siguiendo reglas comunes llamadas protocolos.\n\nCuando abres una página web, tu navegador envía una solicitud a un servidor, que responde con los archivos de la página. Si no hay conexión, esa solicitud no llega y la página no carga.\n\nAlgunas aplicaciones web, llamadas aplicaciones web progresivas (PWA), pueden guardar archivos en el propio dispositivo. Así, cuando no hay internet, muestran la información guardada en lugar de un error. Esta plataforma funciona de esa manera.\n\nCuando vuelve la conexión, la aplicación envía al servidor la información que se guardó mientras estabas sin internet. A este proceso se le llama sincronización.\n\nPractica: explica con tus palabras qué pasa cuando abres esta guía sin conexión y por qué sí puedes leerla."
+  }
+]
