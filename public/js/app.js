@@ -82,9 +82,12 @@ async function contarPendientes() {
 function pintarEstado() {
   const online = enLinea();
   botonRed.classList.toggle('sin-red', !online);
-  const base = online ? 'En línea' : simulado() ? 'Sin conexión (simulado)' : 'Sin conexión';
-  botonRed.textContent = pendientes ? `${base} · ${pendientes} por sincronizar` : base;
-  botonRed.title = simulado() ? 'Volver a usar la conexión real' : 'Simular que no hay conexión';
+  botonRed.classList.toggle('simulado', simulado());
+  // La etiqueta es corta para que quepa en el celular; el detalle va en el título del botón.
+  const base = online ? 'En línea' : 'Sin conexión';
+  botonRed.textContent = pendientes ? `${base} · ${pendientes}` : base;
+  const detalle = pendientes ? ` ${pendientes} registro(s) por sincronizar.` : '';
+  botonRed.title = (simulado() ? 'Sin conexión simulada. Tocar para volver a usar la conexión real.' : 'Tocar para simular que no hay conexión.') + detalle;
 }
 
 async function sincronizar({ silencioso = true } = {}) {

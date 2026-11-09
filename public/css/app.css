@@ -61,7 +61,7 @@ p { margin: 0 0 .75rem; }
 }
 .marca { display: flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; min-width: 0; }
 .marca span { display: flex; flex-direction: column; min-width: 0; }
-.marca strong { font-size: 1rem; }
+.marca strong { font-size: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .marca small { color: var(--texto-suave); font-size: .75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .estado { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
 
@@ -73,6 +73,8 @@ p { margin: 0 0 .75rem; }
 }
 .pastilla::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
 .pastilla.sin-red { background: var(--peligro-claro); color: var(--peligro); }
+.pastilla.simulado { border-style: dashed; border-color: currentColor; }
+.pastilla { white-space: nowrap; }
 
 main { max-width: 860px; margin: 0 auto; padding: 20px 16px; outline: none; }
 
@@ -180,4 +182,5 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 @media (max-width: 560px) {
   .filtros, .campos-2 { grid-template-columns: 1fr; }
   .marca small { display: none; }
+  th, td { padding: 8px 4px; font-size: .85rem; }
 }
