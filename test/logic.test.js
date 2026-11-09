@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   crearEventoLectura, pendientesDeSincronizar, lotes, compactarEvento, unirEventos,
-  resumenActividad, formatearDuracion, agruparPorArea, validarRecurso, parrafos,
+  resumenActividad, formatearDuracion, agruparPorArea, validarRecurso, parrafos, migrarDatos,
 } from '../public/js/logic.js';
 
 const usuario = { id: 'est-1', nombre: 'Ana', grado: '7°' };
@@ -14,6 +14,28 @@ test('crearEventoLectura registra la duración en segundos', () => {
   assert.equal(e.recursoId, 'rec-1');
   assert.equal(e.sinConexion, true);
   assert.equal(e.sincronizado, false);
+});
+
+test('crearEventoLectura es anónimo: guarda el código y el grado, no el nombre', () => {
+  const e = crearEventoLectura({ usuario, recurso, inicio: 0, fin: 10_000 });
+  assert.equal(e.usuarioId, 'est-1');
+  assert.equal(e.grado, '7°');
+  assert.equal(JSON.stringify(e).includes('Ana'), false);
+});
+
+test('compactarEvento quita el nombre si quedó de una versión anterior', () => {
+  assert.equal(compactarEvento({ id: 'a', usuarioNombre: 'Ana' }).usuarioNombre, undefined);
+});
+
+test('migrarDatos renombra el área, quita nombres y agrega recursos nuevos', () => {
+  const datos = {
+    recursos: [{ id: 'r1', area: 'Lenguaje', docente: 'Docente de Lenguaje' }],
+    eventos: [{ id: 'e1', area: 'Lenguaje', usuarioNombre: 'Ana' }],
+  };
+  const m = migrarDatos(datos, [{ id: 'r1', area: 'Lengua Castellana' }, { id: 'r2', area: 'Lengua Castellana' }]);
+  assert.deepEqual(m.recursos.map((r) => [r.id, r.area]), [['r1', 'Lengua Castellana'], ['r2', 'Lengua Castellana']]);
+  assert.equal(m.recursos[0].docente, 'Docente de Lengua Castellana');
+  assert.deepEqual(m.eventos, [{ id: 'e1', area: 'Lengua Castellana' }]);
 });
 
 test('crearEventoLectura descarta aperturas accidentales', () => {

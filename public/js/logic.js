@@ -1,7 +1,7 @@
 // Lógica pura de la plataforma: no usa el DOM ni IndexedDB, así se puede probar con `node --test`
 // y reutilizar en el servidor.
 
-export const AREAS = ['Matemáticas', 'Lenguaje', 'Ciencias Naturales', 'Ciencias Sociales', 'Inglés', 'Tecnología'];
+export const AREAS = ['Lengua Castellana', 'Matemáticas', 'Ciencias Naturales', 'Ciencias Sociales', 'Inglés', 'Tecnología'];
 
 // Lecturas de menos de este tiempo se consideran aperturas accidentales y no se registran (RF04).
 export const SEGUNDOS_MINIMOS_LECTURA = 3;
@@ -11,14 +11,16 @@ export function crearId(prefijo = 'id') {
   return `${prefijo}-${Date.now().toString(36)}-${aleatorio}`;
 }
 
-/** Crea el evento de lectura que se guarda localmente, o null si la lectura fue demasiado corta. */
+/**
+ * Crea el evento de lectura que se guarda localmente, o null si la lectura fue demasiado corta.
+ * Es anónimo (Ley 1581 de 2012): identifica al estudiante solo con un código aleatorio y su grado, nunca con el nombre.
+ */
 export function crearEventoLectura({ usuario, recurso, inicio, fin, sinConexion }) {
   const segundos = Math.round((fin - inicio) / 1000);
   if (!usuario || !recurso || segundos < SEGUNDOS_MINIMOS_LECTURA) return null;
   return {
     id: crearId('ev'),
     usuarioId: usuario.id,
-    usuarioNombre: usuario.nombre,
     grado: usuario.grado ?? null,
     recursoId: recurso.id,
     recursoTitulo: recurso.titulo,
@@ -41,10 +43,27 @@ export function lotes(items, tamano = 25) {
   return out;
 }
 
-/** Quita del evento los campos que solo tienen sentido en el dispositivo, para enviar menos datos. */
+/**
+ * Quita del evento los campos que solo tienen sentido en el dispositivo, para enviar menos datos.
+ * También descarta el nombre si quedó de una versión anterior de la app, para no enviarlo nunca al servidor.
+ */
 export function compactarEvento(e) {
-  const { sincronizado, ...resto } = e;
+  const { sincronizado, usuarioNombre, ...resto } = e;
   return resto;
+}
+
+/** Ajusta datos guardados por versiones anteriores: área «Lenguaje» renombrada y eventos sin nombre. */
+export function migrarDatos(datos, recursosIniciales) {
+  const area = (a) => (a === 'Lenguaje' ? 'Lengua Castellana' : a);
+  const recursos = datos.recursos.map((r) => ({
+    ...r,
+    area: area(r.area),
+    docente: r.docente === 'Docente de Lenguaje' ? 'Docente de Lengua Castellana' : r.docente,
+  }));
+  const ids = new Set(recursos.map((r) => r.id));
+  for (const r of recursosIniciales) if (!ids.has(r.id)) recursos.push(r);
+  const eventos = datos.eventos.map(({ usuarioNombre, ...e }) => ({ ...e, area: area(e.area) }));
+  return { ...datos, recursos, eventos };
 }
 
 /** Une eventos sin duplicar por id; el servidor lo usa para que reenviar un lote no cuente dos veces. */

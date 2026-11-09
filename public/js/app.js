@@ -224,7 +224,7 @@ function vistaIngreso() {
   const formulario = () => `
     <div class="campo"><label for="nombre">Nombre</label><input id="nombre" required autocomplete="name" placeholder="Escribe tu nombre"></div>
     ${rol === 'estudiante'
-      ? `<div class="campo"><label for="grado">Grado</label><select id="grado">${GRADOS.map((g) => `<option ${g === '7°' ? 'selected' : ''}>${g}</option>`).join('')}</select></div>`
+      ? `<div class="campo"><label for="grado">Grado</label><select id="grado">${GRADOS.map((g) => `<option ${g === '9°' ? 'selected' : ''}>${g}</option>`).join('')}</select></div>`
       : `<div class="campo"><label for="area">Área que enseña</label><select id="area">${AREAS.map((a) => `<option>${a}</option>`).join('')}</select></div>`}`;
   vista.innerHTML = `
     <section class="ingreso tarjeta">

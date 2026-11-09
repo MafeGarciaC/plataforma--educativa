@@ -13,11 +13,15 @@ Autoras: Daniela Díaz Caro, María Fernanda García Conde y Estefanía Villalba
 | RF01 · Autenticación y roles | Ingreso como **estudiante** (con grado) o **docente** (con área). En el prototipo no hay contraseña. |
 | RF02 · Recursos por área (HU02) | Biblioteca agrupada por área con búsqueda y filtro. El docente publica guías, lecturas y talleres. |
 | RF03 · Lectura sin conexión (HU01) | «Guardar sin conexión» descarga el recurso completo a IndexedDB; se puede abrir sin internet. |
-| RF04 · Registro local de uso (HU03) | Cada lectura de un estudiante (recurso, fecha, segundos, si fue sin conexión) se guarda en el dispositivo. |
+| RF04 · Registro local de uso (HU03) | Cada lectura de un estudiante (recurso, fecha, segundos, si fue sin conexión) se guarda en el dispositivo. El registro es anónimo: lleva un código aleatorio y el grado, nunca el nombre (Ley 1581 de 2012). |
 | RF05 · Sincronización (HU04) | Al volver la conexión (y cada 30 s) se envían las lecturas pendientes y los recursos publicados sin conexión. |
 | RNF01 · PWA offline-first | Service Worker con caché de la aplicación, IndexedDB y manifiesto instalable. |
 | RNF02 · Diseño adaptativo | Interfaz pensada primero para celular; funciona en tabletas y computadores. |
 | RNF04 · Bajo consumo de datos | El catálogo viaja sin contenido; cada recurso se descarga solo cuando se pide; la sincronización va en lotes de 25. |
+
+Para el piloto con el grado 9° y el área de Lengua Castellana, la plataforma trae cuatro guías de ejemplo de esa área
+(texto argumentativo, crónica, figuras literarias e inferencias); el docente puede publicar las guías definitivas
+desde la sección **Publicar**.
 
 El panel del docente muestra estudiantes activos, número de lecturas, tiempo total, porcentaje de lecturas hechas sin
 conexión y los recursos más consultados: son los datos que se usarán en la evaluación (objetivo específico 4).

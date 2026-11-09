@@ -22,12 +22,42 @@
   {
     "id": "rec-argumentativo",
     "titulo": "El texto argumentativo",
-    "area": "Lenguaje",
+    "area": "Lengua Castellana",
     "grado": "9°",
     "tipo": "Lectura",
-    "docente": "Docente de Lenguaje",
+    "docente": "Docente de Lengua Castellana",
     "descripcion": "Estructura del texto argumentativo: tesis, argumentos y conclusión.",
     "contenido": "Un texto argumentativo busca convencer al lector de una idea, llamada tesis, por medio de razones bien sustentadas.\n\nSu estructura tiene tres partes. En la introducción se presenta el tema y la tesis. En el desarrollo se exponen los argumentos que respaldan la tesis. En la conclusión se retoma la tesis y se resume por qué es válida.\n\nExisten varios tipos de argumentos: de autoridad, cuando se cita a un experto; de ejemplificación, cuando se dan casos concretos; de datos, cuando se usan cifras o estadísticas; y de causa y efecto, cuando se explica qué consecuencias tiene algo.\n\nUn buen texto argumentativo también reconoce las ideas contrarias, llamadas contraargumentos, y explica por qué no son suficientes para rechazar la tesis.\n\nPractica: escribe un texto corto en el que defiendas si los colegios deberían tener acceso a internet en todas las aulas. Incluye al menos dos argumentos y un contraargumento."
+  },
+  {
+    "id": "rec-cronica",
+    "titulo": "La crónica periodística",
+    "area": "Lengua Castellana",
+    "grado": "9°",
+    "tipo": "Guía",
+    "docente": "Docente de Lengua Castellana",
+    "descripcion": "Características de la crónica y pasos para escribir una sobre tu barrio.",
+    "contenido": "La crónica es un texto que narra un hecho real siguiendo el orden en que ocurrió, pero con un estilo cercano a la literatura. Quien la escribe estuvo presente o investigó a fondo, y cuenta lo que vio con detalles que ayudan al lector a imaginar la escena.\n\nSus características principales son: narra hechos reales, sigue un orden cronológico, combina la información con la descripción de personas y lugares, y deja ver la mirada personal del cronista.\n\nUna crónica suele tener un título llamativo, una entrada que atrapa al lector con una escena o una frase, un desarrollo que cuenta los hechos en orden y un cierre que deja una reflexión o una imagen final.\n\nPara escribir una crónica, primero elige un hecho que hayas vivido o que puedas observar, por ejemplo una celebración del barrio o un día de mercado. Toma notas de lo que ves, oyes y hueles, conversa con las personas que participan y luego organiza los hechos en orden.\n\nPractica: escribe una crónica de una página sobre un acontecimiento de tu barrio o de las fiestas del 20 de Enero en Sincelejo. Incluye al menos una descripción de un lugar y la voz de una persona que entrevistes."
+  },
+  {
+    "id": "rec-figuras-literarias",
+    "titulo": "Figuras literarias",
+    "area": "Lengua Castellana",
+    "grado": "9°",
+    "tipo": "Guía",
+    "docente": "Docente de Lengua Castellana",
+    "descripcion": "Metáfora, símil, personificación, hipérbole y anáfora, con ejemplos.",
+    "contenido": "Las figuras literarias son formas de usar el lenguaje que se apartan del sentido común de las palabras para darle más fuerza, belleza o expresividad a lo que se dice. Se usan en la poesía, en las canciones y también en la conversación diaria.\n\nMetáfora: identifica un elemento con otro con el que guarda alguna semejanza, sin usar palabras de comparación. Ejemplo: «Tus ojos son dos luceros».\n\nSímil o comparación: relaciona dos elementos usando palabras como «como», «igual que» o «parecido a». Ejemplo: «Corría como el viento».\n\nPersonificación: atribuye cualidades humanas a animales, objetos o ideas. Ejemplo: «El sol nos sonreía desde el cielo».\n\nHipérbole: exagera una característica para darle énfasis. Ejemplo: «Te lo he dicho un millón de veces».\n\nAnáfora: repite una o varias palabras al comienzo de frases seguidas. Ejemplo: «Cada día te pienso, cada día te espero, cada día te extraño».\n\nPractica: busca la letra de una canción que te guste e identifica en ella al menos tres figuras literarias. Luego escribe un párrafo sobre tu colegio en el que uses una metáfora, una personificación y una hipérbole."
+  },
+  {
+    "id": "rec-inferencias",
+    "titulo": "Comprensión lectora: hacer inferencias",
+    "area": "Lengua Castellana",
+    "grado": "9°",
+    "tipo": "Taller",
+    "docente": "Docente de Lengua Castellana",
+    "descripcion": "Cómo leer entre líneas para deducir información que el texto no dice directamente.",
+    "contenido": "Inferir es deducir una información que el texto no dice de forma directa, uniendo las pistas que da el autor con lo que ya sabemos. Es una de las habilidades que más se evalúan en las pruebas de lectura.\n\nExisten tres niveles de lectura. En el nivel literal se identifica lo que el texto dice explícitamente. En el nivel inferencial se deduce lo que el texto sugiere. En el nivel crítico se valora el texto y se toma una posición frente a él.\n\nEjemplo: «Marta llegó empapada, dejó el paraguas roto en la puerta y pidió una toalla». El texto no dice que llovía, pero las pistas (empapada, paraguas roto, toalla) permiten inferir que llovía fuerte y que el viento dañó el paraguas.\n\nPara hacer inferencias: lee con atención los detalles, pregúntate por qué el autor incluyó cada uno, relaciona las pistas con tus conocimientos y comprueba que tu conclusión no contradiga el texto.\n\nPractica: lee este fragmento y responde. «Cuando sonó el timbre, Andrés guardó rápido el cuaderno, miró el reloj y salió corriendo sin despedirse.» ¿Qué puedes inferir sobre lo que sentía Andrés y sobre lo que iba a hacer? Escribe las pistas que usaste."
   },
   {
     "id": "rec-ciclo-agua",

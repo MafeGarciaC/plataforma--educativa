@@ -5,7 +5,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { extname, join, normalize, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { validarRecurso, unirEventos, resumenActividad, crearId, tamanoKB } from './public/js/logic.js';
+import { validarRecurso, unirEventos, resumenActividad, crearId, tamanoKB, compactarEvento, migrarDatos } from './public/js/logic.js';
 
 const RAIZ = dirname(fileURLToPath(import.meta.url));
 const PUBLICO = join(RAIZ, 'public');
@@ -22,11 +22,11 @@ const TIPOS = {
 };
 
 export async function crearBaseDeDatos(ruta) {
+  const iniciales = JSON.parse(await readFile(join(RAIZ, 'data', 'recursos-iniciales.json'), 'utf8'))
+    .map((r) => ({ ...r, publicado: '2026-11-01T12:00:00.000Z' }));
   async function cargar() {
-    if (existsSync(ruta)) return JSON.parse(await readFile(ruta, 'utf8'));
-    const recursos = JSON.parse(await readFile(join(RAIZ, 'data', 'recursos-iniciales.json'), 'utf8'))
-      .map((r) => ({ ...r, publicado: '2026-11-01T12:00:00.000Z' }));
-    return { recursos, eventos: [] };
+    if (!existsSync(ruta)) return { recursos: iniciales, eventos: [] };
+    return migrarDatos(JSON.parse(await readFile(ruta, 'utf8')), iniciales);
   }
   let datos = await cargar();
   // Las escrituras se encadenan para que dos peticiones simultáneas no se pisen.
@@ -97,7 +97,8 @@ async function api(req, res, db, ruta) {
   if (req.method === 'POST' && ruta === '/api/sincronizar') {
     const { eventos } = await leerJSON(req);
     if (!Array.isArray(eventos)) return enviarJSON(res, 400, { error: 'Se esperaba una lista de eventos.' });
-    const { todos, agregados } = unirEventos(db.datos.eventos, eventos);
+    // Aunque un cliente viejo envíe el nombre, el servidor no lo guarda.
+    const { todos, agregados } = unirEventos(db.datos.eventos, eventos.map((e) => (e && typeof e === 'object' ? compactarEvento(e) : e)));
     db.datos.eventos = todos;
     if (agregados.length) await db.guardar();
     // Se confirman todos los ids recibidos (también los repetidos) para que el cliente los marque como sincronizados.

@@ -1,7 +1,7 @@
 // Pruebas de integración de la API: levantan el servidor real con una base de datos temporal.
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, rm } from 'node:fs/promises';
+import { mkdtemp, rm, readFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { iniciarServidor } from '../server.js';
@@ -58,10 +58,14 @@ test('sincronizar es idempotente: reenviar un lote no duplica lecturas', async (
   const r2 = await (await post('/api/sincronizar', { eventos })).json();
   assert.equal(r2.nuevos, 0);
 
+  // Un cliente viejo que envíe el nombre no lo deja guardado en el servidor.
+  await post('/api/sincronizar', { eventos: [{ ...eventos[0], id: 'ev-3', usuarioNombre: 'Ana' }] });
   const resumen = await (await fetch(`${base}/api/actividad`)).json();
-  assert.equal(resumen.lecturas, 2);
+  assert.equal(resumen.lecturas, 3);
   assert.equal(resumen.estudiantes, 2);
-  assert.equal(resumen.lecturasSinConexion, 1);
+  assert.equal(resumen.lecturasSinConexion, 2);
+  const guardado = JSON.parse(await readFile(join(carpeta, 'db.json'), 'utf8'));
+  assert.equal(JSON.stringify(guardado.eventos).includes('usuarioNombre'), false);
 });
 
 test('rechaza cuerpos inválidos y rutas fuera de la carpeta pública', async () => {

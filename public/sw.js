@@ -1,6 +1,6 @@
 // Service Worker: guarda la aplicación en caché para que abra sin internet (RNF01).
 // Cambiar la versión cada vez que se modifique un archivo de la app, para que los dispositivos la actualicen.
-const VERSION = 'aula-v3';
+const VERSION = 'aula-v4';
 const CACHE_APP = `${VERSION}-app`;
 const CACHE_API = `${VERSION}-api`;
 
